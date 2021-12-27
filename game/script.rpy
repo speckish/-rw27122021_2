@@ -9,30 +9,21 @@ define e = Character("Eileen")
 # The game starts here.
 
 label start:
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
     scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
     show eileen happy
-
-    # These display lines of dialogue.
-
     e "We're coding for the first time now."
     e "Test line."
     e "Wee! So fun!"
-
     jump brainstorm
 
 label brainstorm:
-    f "I'm not sure what I should make a game about."
-
-    # menu:
-    #     "Action."
+    e "I'm not sure what I should make a game about."
+    menu:
+        "Adventure":
+            pass
+        "Puzzle":
+            pass
+        "Narrative":
+            pass
+    e "We made a choice about what kind of game to make."
     return
