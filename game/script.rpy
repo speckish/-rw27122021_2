@@ -5,12 +5,23 @@
 
 define e = Character("Eileen")
 
-
-# The game starts here.
+image rain:
+    zoom 0.5
+    "images/rain_1.png"
+    pause 0.15
+    "images/rain_2.png"
+    pause 0.15
+    "images/rain_3.png"
+    pause 0.5
+    "images/rain_4.png"
+    repeat
 
 label start:
+    # if you add a "bg room.png" to your images folder, it will overwrite this.
     scene bg room
+    # if you add a "eileen happy.png" to your images folder, it will overwrite this.
     show eileen happy
+    show rain
     e "We're coding for the first time now."
     e "Test line."
     e "Wee! So fun!"
