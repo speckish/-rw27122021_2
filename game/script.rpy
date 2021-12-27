@@ -24,10 +24,15 @@ label start:
 
     # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
+    e "We're coding for the first time now."
+    e "Test line."
+    e "Wee! So fun!"
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    jump brainstorm
 
-    # This ends the game.
+label brainstorm:
+    f "I'm not sure what I should make a game about."
 
+    # menu:
+    #     "Action."
     return
