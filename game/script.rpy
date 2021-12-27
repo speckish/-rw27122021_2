@@ -20,10 +20,15 @@ label brainstorm:
     e "I'm not sure what I should make a game about."
     menu:
         "Adventure":
-            pass
+            # Call leaves behind a bookmark so you can return.
+            call okay_choice
         "Puzzle":
-            pass
+            call okay_choice
         "Narrative":
-            pass
+            e "Heck yeah, I want to make a narrative game."
     e "We made a choice about what kind of game to make."
+    return
+
+label okay_choice:
+    e "Eh, I guess, that's an okay choice."
     return
