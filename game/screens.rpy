@@ -204,12 +204,25 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
+image my_choice_bg:
+    "#f00"
+    size (600, 45)
+
+image my_choice_bg_hover:
+    "#00f"
+    size (600, 45)
+
 screen choice(items):
-    style_prefix "choice"
+    # style_prefix "choice"
 
     vbox:
+        align (0.25, 0.5)
+        spacing 50
         for i in items:
-            textbutton i.caption action i.action
+            textbutton i.caption action i.action:
+                idle_background "my_choice_bg"
+                hover_background "my_choice_bg_hover"
+
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -230,6 +243,7 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
