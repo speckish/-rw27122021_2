@@ -29,6 +29,9 @@ label start:
 
 label brainstorm:
     e "I'm not sure what I should make a game about."
+
+    call screen image_button_example
+    "Wee, buttons!"
     menu:
         "Adventure":
             # Call leaves behind a bookmark so you can return.

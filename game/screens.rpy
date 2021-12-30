@@ -212,18 +212,42 @@ image my_choice_bg_hover:
     "#00f"
     size (600, 45)
 
+transform choice_transform(index):
+    xoffset -800
+    linear 0.15+(index*0.15) xoffset 0
+
 screen choice(items):
     # style_prefix "choice"
-
+    default index = 0
     vbox:
         align (0.25, 0.5)
         spacing 50
         for i in items:
             textbutton i.caption action i.action:
+                at choice_transform(index)
                 idle_background "my_choice_bg"
                 hover_background "my_choice_bg_hover"
+            $ index += 1
 
+image white = "#fff"
 
+image munchy_hover:
+    "munchy"
+    matrixcolor TintMatrix("#f00")
+
+screen image_button_example:
+    add "white"
+    imagebutton:
+         idle "munchy"
+         hover "munchy_hover"
+         focus_mask True
+         action NullAction()
+         # action Return()
+
+    imagebutton:
+         idle "crow-leaving"
+         focus_mask True
+         action Return()
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
 ## menu captions will be displayed as empty buttons.
